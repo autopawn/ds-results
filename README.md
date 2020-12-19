@@ -1,5 +1,10 @@
 # ds-results
 
+Results of DS applied to generated KG-problems.
+
+**NOTE:** Large files that include the generated problems and per-problem results were ommited from this repostiory due to storage limitations, these can be downloaded from [Google Drive](https://drive.google.com/drive/folders/12Zxvx-i2BvRo_rzYlG68NtUyZyu9kiDt?usp=sharing).
+
+
 # Compiling dc2
 
 Make sure that dc2 is compiled in order to execute the experiments.

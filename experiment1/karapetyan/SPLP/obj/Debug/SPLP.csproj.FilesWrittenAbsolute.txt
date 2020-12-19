@@ -1,0 +1,6 @@
+/home/fcasas/Music/dc2_exp/experiment1/karapetyan/SPLP/obj/Debug/.NETFramework,Version=v4.5.2.AssemblyAttribute.cs
+/home/fcasas/Music/dc2_exp/experiment1/karapetyan/bin/SPLP.exe.config
+/home/fcasas/Music/dc2_exp/experiment1/karapetyan/bin/SPLP.exe.mdb
+/home/fcasas/Music/dc2_exp/experiment1/karapetyan/bin/SPLP.exe
+/home/fcasas/Music/dc2_exp/experiment1/karapetyan/SPLP/obj/Debug/SPLP.exe
+/home/fcasas/Music/dc2_exp/experiment1/karapetyan/SPLP/obj/Debug/SPLP.exe.mdb

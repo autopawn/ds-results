@@ -1,0 +1,13 @@
+Koerkel-Ghosh Benchmarks
+
+Similar benchmarks: Bilde-Krarup, Uniform
+
+Benchmarks of this type were initially proposed by Koerkel [1]. Here n = m, and connection costs are drawn uniformly at random from [1000, 2000]. Opening costs are drawn uniformly at random from [100, 200] in class A, from [1000, 2000] in class B and from [10000, 20000] in class C. Furthermore symmetric and asymmetric connection matrices are created. Our package provides instances of the 3 largest sizes presented in [2] with n = m = 250, 500 and 750. For each size, each type symmetric/asymmetric and each class it contains 5 instances resulting in a total of 90 instances. Symmetric and asymmetric instances can be downloaded separately on the download page here. Code for instance generators is also available.
+
+References
+[1] M. Koerkel
+    On the exact solution of large-scale simple plant location problems
+    European Journal of Operations Research, 39:157-173, 1989
+[2] D. Ghosh
+    Neighborhood search heuristics for the uncapacitated facility location problem
+    European Journal of Operations Research, 150:150-162, 2003

@@ -1,3 +1,14 @@
+# Too big result folders:
+results-exp1
+results-exp4d
+problems_kg_original
+problems_kg_custom
+problems_kg_custom_d
+problems_ufllib
+jsons
+result-figs-1/data.json
+result-figs-4d/data.json
+
 # Prerequisites
 *.d
 

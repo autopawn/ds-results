@@ -1,0 +1,5 @@
+/home/fcasas/Music/dc2_exp/experiment1/karapetyan/LabHelper/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/fcasas/Music/dc2_exp/experiment1/karapetyan/LabHelper/bin/Release/LabHelper.dll.mdb
+/home/fcasas/Music/dc2_exp/experiment1/karapetyan/LabHelper/bin/Release/LabHelper.dll
+/home/fcasas/Music/dc2_exp/experiment1/karapetyan/LabHelper/obj/Release/LabHelper.dll
+/home/fcasas/Music/dc2_exp/experiment1/karapetyan/LabHelper/obj/Release/LabHelper.dll.mdb

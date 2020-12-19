@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>JetBrains.Annotations</id>
+    <version>9.1.1</version>
+    <title>JetBrains ReSharper Annotations</title>
+    <authors>JetBrains</authors>
+    <owners>JetBrains</owners>
+    <licenseUrl>https://www.jetbrains.com/resharper/buy/license.html</licenseUrl>
+    <projectUrl>http://www.jetbrains.com/resharper/</projectUrl>
+    <iconUrl>http://resharper-plugins.jetbrains.com/Content/Images/packageReSharper.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>ReSharper Annotations help reduce false positive warnings, explicitly declare purity and nullability in your code, deal with implicit usages of members, support special semantics of APIs in ASP.NET and XAML frameworks and otherwise increase accuracy of ReSharper code inspections.
+
+All usages of ReSharper Annotations attributes are erased from metadata by default, which means no actual binary reference to 'JetBrains.Annotations.dll' assembly is produced. If you need to preserve these attributes in metadata, just define 'JETBRAINS_ANNOTATIONS' conditional compilation symbol in your projects.</description>
+    <summary>Annotations to increase accuracy of ReSharper code inspections</summary>
+    <releaseNotes>• New [SourceTemplate] and [Macro] annotations for ReSharper 9.1 'Source Template' feature;
+• Attribute [StringFormatMethod] is now allowed on indexer declarations.</releaseNotes>
+    <tags>jetbrains resharper annotations canbenull notnull</tags>
+  </metadata>
+</package>

@@ -60,4 +60,4 @@ for fname in $problems ; do
     fi
 done
 
-[ -s results/cmcs-3comp_1000/problems_kg_custom_d/asym_3000d-1 ]
+# [ -s results/cmcs-3comp_1000/problems_kg_custom_d/asym_3000d-1 ]

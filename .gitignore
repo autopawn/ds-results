@@ -4,10 +4,13 @@ results-exp4d
 problems_kg_original
 problems_kg_custom
 problems_kg_custom_d
+problems_kmedian_custom
 problems_ufllib
 jsons
 result-figs-1/data.json
 result-figs-4d/data.json
+results-leftraru-kmedian-custom-*
+results_kmedian*
 
 # Prerequisites
 *.d

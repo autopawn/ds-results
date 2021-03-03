@@ -26,7 +26,7 @@ with open(input_fname,"r") as file:
     assert(header.split(":")[0]=="FILE")
 
     # Get the number of facilities and clients
-    n,m,s_max = [int(x) for x in lines[1].split(" ")]
+    n,m,s_max = [int(x) for x in lines[1].split(" ")[:3]]
 
     # Read lines to get cost_matrix and fcosts
     fcosts = []

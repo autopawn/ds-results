@@ -51,6 +51,7 @@ for fname in $problems ; do
     if test -s "$target" ; then
         echo $target already exists. Skipping.
     else
+        echo ${@:3} $fname $target >> runlist
         # Run dc2, discard output if running on SLURM
         if [[ -v SLURM_ARRAY_TASK_ID ]]; then
             ${@:3} $fname $target >/dev/null

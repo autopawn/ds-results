@@ -62,11 +62,11 @@ for dirpath, dirnames, filenames in os.walk(arg_inputfolder):
         filepath = dirpath+"/"+fname
         with open(filepath) as fo:
             # print("filepath: "+filepath)
-            
+
             txt = fo.read()
 
             # Parse solutions according to expected format
-            if ("dc" in group) or ("grasp" in group) or ("search" in group):
+            if ("ds" in group) or ("dc" in group) or ("grasp" in group) or ("search" in group):
                 # Parse according to dc
                 entries = dc2_rst.findall(txt)
                 entries = list(map(lambda x: (-float(x[1]),float(x[2])), entries))

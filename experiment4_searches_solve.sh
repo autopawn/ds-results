@@ -21,6 +21,7 @@ poolsizs400="$(seq 5 5 100)
 $(seq 120 20 400)"
 
 target=problems_kg_custom_d
+# target=problems_kmedian_custom
 
 # =================================================================
 # Branching all solutions
@@ -126,38 +127,38 @@ done
 for alpha in $poolsizs200; do
     name="sdbsp-mgesum-pr-best"
     bash ./solve_problem_set.sh dc-"$name"_"$alpha" "$presetfullslim10cpu22gb" "$target" \
-        $prefix ./dc2/bin/dc -V -W -M -B8 -t10 sdbs+:"$alpha":mgesum _best:"$alpha"
+        $pref ./dc2/bin/dc -V -W -M -B8 -t10 sdbs+:"$alpha":mgesum _best:"$alpha"
 done
 
 for alpha in $poolsizs100; do
     name="sdbsp-mgesum-pr-best2"
     bash ./solve_problem_set.sh dc-"$name"_"$alpha" "$presetfullslim10cpu22gb" "$target" \
-        $prefix ./dc2/bin/dc -V -W -M -B8 -t10 sdbs+:"$alpha":mgesum _best:"$((2*alpha))"
+        $pref ./dc2/bin/dc -V -W -M -B8 -t10 sdbs+:"$alpha":mgesum _best:"$((2*alpha))"
 done
 
 
 for alpha in $poolsizs200; do
     name="rand8-pr-best"
     bash ./solve_problem_set.sh dc-"$name"_"$alpha" "$presetfullslim10cpu22gb" "$target" \
-        $prefix ./dc2/bin/dc -V -W -M -B8 -t10 rand:"$alpha" _best:"$alpha"
+        $pref ./dc2/bin/dc -V -W -M -B8 -t10 rand:"$alpha" _best:"$alpha"
 done
 
 for alpha in $poolsizs100; do
     name="rand8-pr-best2"
     bash ./solve_problem_set.sh dc-"$name"_"$alpha" "$presetfullslim10cpu22gb" "$target" \
-        $prefix ./dc2/bin/dc -V -W -M -B8 -t10 rand:"$alpha" _best:"$((2*alpha))"
+        $pref ./dc2/bin/dc -V -W -M -B8 -t10 rand:"$alpha" _best:"$((2*alpha))"
 done
 
 for alpha in $poolsizs200; do
     name="best8-pr-best"
     bash ./solve_problem_set.sh dc-"$name"_"$alpha" "$presetfullslim10cpu22gb" "$target" \
-        $prefix ./dc2/bin/dc -V -W -M -B8 -t10 best:"$alpha" _best:"$alpha"
+        $pref ./dc2/bin/dc -V -W -M -B8 -t10 best:"$alpha" _best:"$alpha"
 done
 
 for alpha in $poolsizs100; do
     name="best8-pr-best2"
     bash ./solve_problem_set.sh dc-"$name"_"$alpha" "$presetfullslim10cpu22gb" "$target" \
-        $prefix ./dc2/bin/dc -V -W -M -B8 -t10 best:"$alpha" _best:"$((2*alpha))"
+        $pref ./dc2/bin/dc -V -W -M -B8 -t10 best:"$alpha" _best:"$((2*alpha))"
 done
 
 
@@ -168,7 +169,7 @@ params3comp="5 10 15 20 25 30 40 50 75 100 150 200 250 300 400 500 600 700 800 1
 for alpha in $params3comp; do
     name="3comp"
     bash ./solve_problem_set.sh cmcs-"$name"_"$alpha" "$preset1cpu2gb" "$target" \
-        $prefix "bash -e ./solve_karapetyan.sh" "$alpha"
+        $pref "bash -e ./solve_karapetyan.sh" "$alpha"
 done
 
 # Solve using POPSTAR S
@@ -177,7 +178,7 @@ for pair in $popstarSRP; do
     poolsize=$(echo "$pair" | cut -d'-' -f1)
     restarts=$(echo "$pair" | cut -d'-' -f2)
     bash ./solve_problem_set.sh popstar-S_"$poolsize"_"$restarts"r "$preset1cpu2gb" "$target" \
-        $prefix "bash -xe ./solve_popstar.sh" -graspit $restarts -elite $poolsize
+        $pref "bash -xe ./solve_popstar.sh" -graspit $restarts -elite $poolsize
 done
 
 # cost = 3200/50 * time

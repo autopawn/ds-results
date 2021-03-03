@@ -25,6 +25,7 @@ metric=1
 # Generate instances
 for ii in $(seq $nproblems); do
     ii0=$(printf "%04d" "$ii")
-    "$cdir"/kmedian/kmgen "$size" "$denom" "$metric" "$target"/"$size"_"$denom"-"$ii0"
+    seed=$((32+ii*79))
+    "$cdir"/kmedian/kmgen "$size" "$denom" "$metric" "$target"/"$size"_"$denom"-"$ii0" "$seed"
 done
 

@@ -6,17 +6,29 @@ if [[ -v SLURM_ARRAY_TASK_ID ]]; then
 fi
 
 multipliers="
-250a 40
-250b 40
-250c 40
-500a 100
-500b 50
-500c 40
-750a 200
-750b 100
-750c 40
-3000d 200
-3000e 200
+sym_250a 40
+asym_250a 40
+sym_250b 40
+asym_250b 40
+sym_250c 40
+asym_250c 40
+sym_500a 100
+asym_500a 100
+sym_500b 50
+asym_500b 50
+sym_500c 40
+asym_500c 40
+sym_750a 200
+asym_750a 200
+sym_750b 100
+asym_750b 100
+sym_750c 40
+asym_750c 40
+sym_3000d 200
+asym_3000d 200
+sym_3000e 200
+asym_3000e 200
+2000_10 200
 "
 
 if (($# != 3 )); then
@@ -30,10 +42,11 @@ input="${@: -2:1}"
 target="${@: -1}"
 timebudget="${@:1:$nothers}"
 
-problemtype=$(basename "$input" | cut -d'_' -f2 | cut -d'-' -f1)
+problemtype=$(basename "$input" | cut -d'-' -f1)
 timemult=$(echo "$multipliers" | grep $problemtype | cut -d' ' -f2)
 timebudget=$(python -c "print($timemult*$timebudget/1000.0)")
 
+echo "problemtype: $problemtype"
 echo "input: $input"
 echo "timebudget: $timebudget"
 

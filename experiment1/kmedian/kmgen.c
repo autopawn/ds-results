@@ -2,6 +2,8 @@
 #include<fstream>
 #include<cstdlib>
 #include<cmath>
+#include<stdio.h>
+#include<stdlib.h>
 
 using namespace std;
 
@@ -83,16 +85,19 @@ int main(int argc, char **argv)
 {
   double *open_cost, *cost_matrix;
 
-  if (argc < 5) {
-    cout << "kmgen [LOCATIONS] [DENOM] [METRIC] [OUTPUT_FILE]\n All numeric data integer/boolean, please !\n\n";
+  if (argc < 6) {
+    cout << "kmgen [LOCATIONS] [DENOM] [METRIC] [OUTPUT_FILE] [SEED]\n All numeric data integer/boolean, please !\n\n";
     exit(0);
   }
 
-  srand(1234567);
 
   int locations = atoi(argv[1]);
   int denom = atoi(argv[2]);
   bool metric = atoi(argv[3]);
+  int seed = atoi(argv[5]);
+  fprintf(stderr,"seed: %d\n",seed);
+  srand(seed);
+
 
   open_cost = new double [locations];
   cost_matrix = new double [locations*locations];

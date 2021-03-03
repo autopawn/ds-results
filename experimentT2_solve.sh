@@ -86,10 +86,13 @@ bash ./solve_problem_set.sh "ds-indexval" "$preset" "$target" \
 bash ./solve_problem_set.sh "ds-sdbs" "$preset" "$target" \
     $pref ./dc2/bin/dc -V -W -t4 -B16 sdbs:80:mgesum
 
+bash ./solve_problem_set.sh "ds-vrh1" "$preset" "$target" \
+    $pref ./dc2/bin/dc -V -W -t4 -B16 vrh:80:mgesum:80
+
 bash ./solve_problem_set.sh "ds-vrh2" "$preset" "$target" \
     $pref ./dc2/bin/dc -V -W -t4 -B16 vrh:80:mgesum:160
 
-bash ./solve_problem_set.sh "ds-vrh2" "$preset" "$target" \
+bash ./solve_problem_set.sh "ds-vrh4" "$preset" "$target" \
     $pref ./dc2/bin/dc -V -W -t4 -B16 vrh:80:mgesum:320
 
 # Filters

@@ -4,7 +4,7 @@ import os
 # Check arguments
 reg_args = sys.argv
 if len(reg_args) not in (3,4):
-    print("usage: python3 %s [probles_kg_custom|probles_kg_custom_d] <input_json> [<output_folder>]"%(reg_args[0]))
+    print("usage: python3 %s [problems_kg_custom_|problems_kg_custom_d] <input_json> [<output_folder>]"%(reg_args[0]))
     sys.exit(1)
 
 arg_jsonfile  = reg_args[2]
@@ -12,13 +12,15 @@ arg_outputfolder = reg_args[3] if len(reg_args)>3 else None
 
 
 # Parse the PROBLEMSET
-assert(reg_args[1] in ("problems_kg_custom","problems_kg_custom_d","problems_kg_custom_e"))
+assert(reg_args[1] in ("problems_kg_custom","problems_kg_custom_d","problems_kg_custom_e","problems_kmedian_custom"))
 PROBLEMSET = reg_args[1]
 
 if PROBLEMSET=="problems_kg_custom_d":
     REL_ERROR_PLOT_YLIM = [0.0002,0.0002,0.0002]
 elif PROBLEMSET=="problems_kg_custom_e":
     REL_ERROR_PLOT_YLIM = [0.0002,0.0002,0.0002]
+elif PROBLEMSET=="problems_kmedian_custom":
+    REL_ERROR_PLOT_YLIM = [0.004,0.0003,0.00015]
 else:
     REL_ERROR_PLOT_YLIM = [0.0002,0.0001,0.00003]
 
@@ -51,6 +53,7 @@ xranges = {
     "750c" :  20,
     "3000d" :200,
     "3000e" :200,
+    "10"    : 80,
 }
 
 # Get colors
@@ -87,9 +90,7 @@ plot_styles = {                   # (plot, color, style, line width, dots each)
     "dc-rand8-pr-best2"         : ( 2 , c_rand , "2-"   ,  1 ,   0,    "rand8-pr2"),
     "dc-sdbsp-mgesum-pr-best"   : ( 2 , c_divs , "2:"   ,  1 ,   0,    "ds-sdbsp-pr"),
     "dc-sdbsp-mgesum-pr-best2"  : ( 2 , c_divs , "2-"   ,  1 ,   0,    "ds-sdbsp-pr2"),
-#   "dc-sdbs-mgesum-pr-best"    : ( 2 , c_othe , "2:"   ,  1 ,   0),
-#   "dc-sdbs-mgesum-pr-best2"   : ( 2 , c_othe , "2-"   ,  1 ,   0),
-#   "popstar-L"                 : ( 2 , c_pops , "2:"   ,  1 ,   0),
+
     "popstar-S"                 : ( 2 , c_pops , "2-"   ,  1 ,   0,    "popstar-S"),
     "cmcs-3comp"                : ( 2 , c_cmcs , "2-"   ,  1 ,   0,    "cmcs-3comp"),
 }
@@ -191,8 +192,12 @@ for pgroup in pgroups:
             values.append( (bestval,sumtime) )
         values = np.array(values)
 
-        avg_value = np.mean(values[:,0])
-        avg_time = np.mean(values[:,1])
+        if len(values.shape)==2:
+            avg_value = np.mean(values[:,0])
+            avg_time = np.mean(values[:,1])
+        else:
+            avg_value = 1
+            avg_time = 0
 
         if mname not in results_data: results_data[mname] = []
         results_data[mname].append( (size,avg_value,avg_time) )
@@ -249,6 +254,9 @@ for pgroup in pgroups:
                     data[:,2],
                     data[:,1],
                     linestyle,label=label,color=color,alpha=alpha,linewidth=width)
+
+                if "cmcs" in label:
+                    print(data)
 
                 if dotstep!=0:
                     plt.plot(

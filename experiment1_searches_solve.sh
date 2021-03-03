@@ -26,6 +26,7 @@ $(seq 1000 200 9600)"
 
 target=problems_kg_custom
 # target=problems_kg_custom_d
+# target=problems_kmedian_custom
 
 
 # =================================================================

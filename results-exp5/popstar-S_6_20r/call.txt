@@ -1,0 +1,2 @@
+--partition=slims --cpus-per-task=1 --mem-per-cpu=2G
+./solve_problem_set.sh popstar-S_6_20r "--partition=slims --cpus-per-task=1 --mem-per-cpu=2G" "problems_kmedian_custom" bash -xe ./solve_popstar.sh -graspit 20 -elite 6

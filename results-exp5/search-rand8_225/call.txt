@@ -1,0 +1,2 @@
+--partition=slims --cpus-per-task=10 --mem-per-cpu=2200M
+./solve_problem_set.sh search-rand8_225 "--partition=slims --cpus-per-task=10 --mem-per-cpu=2200M" "problems_kmedian_custom" ./dc2/bin/dc -V -W -B8 -t10 rand:225

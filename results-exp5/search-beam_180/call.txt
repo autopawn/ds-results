@@ -1,0 +1,2 @@
+--partition=slims --cpus-per-task=10 --mem-per-cpu=2200M
+./solve_problem_set.sh search-beam_180 "--partition=slims --cpus-per-task=10 --mem-per-cpu=2200M" "problems_kmedian_custom" ./dc2/bin/dc -V -W -t10 best:180

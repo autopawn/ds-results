@@ -1,2 +1,0 @@
---partition=slims --cpus-per-task=10 --mem-per-cpu=2200M
-./solve_problem_set.sh dc-rand8-pr-best_190 "--partition=slims --cpus-per-task=10 --mem-per-cpu=2200M" "problems_kmedian_custom" ./dc2/bin/dc -V -W -M -B8 -t10 rand:190 _best:190

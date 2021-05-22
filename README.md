@@ -1,10 +1,13 @@
+- Comprobar qué versión de dc2 es más moderna.
+- Observar sobre qué instancias reporta resultados Karapetyan.
+- Crear archivo de tareas por lotes para eplicar experimentos sobre esas instancias con Karapetyan y POPSTAR.
+
+
 # ds-results
 
-**Thesis branch**.
+**Review 1 branch**.
 
 Results of DS applied to generated KG and k-median problems.
-
-**NOTE:** Large files that include the generated problems and per-problem results were ommited from this repostiory due to storage limitations, these can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1sYPR0kChJSB0CnX4HVRNgL7pIKnm9GoH?usp=sharing).
 
 # Compiling dc2
 
@@ -17,30 +20,19 @@ cd ..
 
 **NOTE**: This is the version on which these results were obtained. A more recent version can be found in the [dc2 repository](https://github.com/autopawn/dc2).
 
-# Step 1: Generate KG and k-median problems
-
-To generate new KG and k-median problems.
-
-**NOTE**: this can be skipped as the problems are provided on `problems_kg_custom/`, `problems_kg_custom_d/`, and `problems_kmedian_custom/`
-
-```
-bash -xe experiment1/generate_kg_problems.sh
-bash -xe experiment1/generate_kmedian_problems.sh
-```
-
-## Step 2: compile POPSTAR
+# Step 2: compile POPSTAR
 
 ```
 bash -xe experiment1/compile_popstar.sh
 ```
 
-## Step 3: compile CMCS
+# Step 3: compile CMCS
 
 ```
 bash -xe experiment1/compile_karapetyan.sh
 ```
 
-## Step 5.1: compute DS components performance for k-median
+# Step 4.1: compute DS components performance for k-median
 
 This solves the custom k-median problems for all DS variants shown in the Thesis.
 
@@ -54,7 +46,7 @@ This will create the results in the `results` folder, move them.
 mv results results-t2
 ```
 
-## Step 5.2: compute rel. cost vs time curves for all algorithms
+# Step 5.2: compute rel. cost vs time curves for all algorithms
 
 This takes a considerable amount of computational resources. It was run on the NLHPC cluster. Check this script contents to see the parameters.
 
@@ -92,7 +84,7 @@ This will create the results in the `results` folder, move them.
 mv results results-exp5
 ```
 
-## Step 5: parse all results
+# Step 5: parse all results
 
 Condense the results in their respective JSONs:
 
@@ -104,7 +96,7 @@ python3 result_parser.py results-exp4d jsons/results-exp4d.json
 python3 result_parser.py results-exp5 jsons/results-exp5.json
 ```
 
-## Step 6: plot results
+# Step 6: plot results
 
 Plot the JSONs:
 

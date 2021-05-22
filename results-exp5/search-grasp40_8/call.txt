@@ -1,2 +1,0 @@
---partition=slims --cpus-per-task=1 --mem-per-cpu=2G
-./solve_problem_set.sh search-grasp40_8 "--partition=slims --cpus-per-task=1 --mem-per-cpu=2G" "problems_kmedian_custom" ./dc2/bin/dc -V -W -t1 -R8 best:40 rand:1

@@ -1,2 +1,0 @@
---partition=slims --cpus-per-task=10 --mem-per-cpu=2200M
-./solve_problem_set.sh dc-sdbsp-mgemin-pr-best2_18 "--partition=slims --cpus-per-task=10 --mem-per-cpu=2200M" "problems_kmedian_custom" ./dc2/bin/dc -V -W -M -B8 -t10 sdbs+:18:mgemin _best:36

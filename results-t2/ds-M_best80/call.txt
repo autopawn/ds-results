@@ -1,2 +1,0 @@
---partition=slims --cpus-per-task=4 --mem-per-cpu=2G
-./solve_problem_set.sh ds-M_best80 "--partition=slims --cpus-per-task=4 --mem-per-cpu=2G" "problems_kmedian_custom" ./dc2/bin/dc -V -W -t4 -M -B16 sdbs+:80:mgesum _best:80

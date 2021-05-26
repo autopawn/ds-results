@@ -4,18 +4,20 @@ import os
 import re
 import json
 
-# Wether to compact all restats as a single one to make a smaller JSON
-AVERAGE_RESTARTS = True
-
-
 # Check arguments
-if len(sys.argv)!=3:
-    print("usage: python3 %s <input_folder> <output_json>"%(sys.argv[0]))
+flags = [arg for arg in sys.argv if arg[0]=="-"]
+args  = [arg for arg in sys.argv if arg[0]!="-"]
+
+if len(args)!=3:
+    print("usage: python3 %s [-r] <input_folder> <output_json>"%(sys.argv[0]))
     sys.exit(1)
 
+# Wether to compact all restats as a single one to make a smaller JSON
+AVERAGE_RESTARTS = "-r" not in flags
 
-arg_inputfolder  = sys.argv[1]
-arg_outputfile = sys.argv[2]
+
+arg_inputfolder  = args[1]
+arg_outputfile = args[2]
 
 
 # Regular expressions

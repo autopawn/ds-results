@@ -43,8 +43,13 @@ target="${@: -1}"
 timebudget="${@:1:$nothers}"
 
 problemtype=$(basename "$input" | cut -d'-' -f1)
-timemult=$(echo "$multipliers" | grep $problemtype | cut -d' ' -f2)
-timebudget=$(python -c "print($timemult*$timebudget/1000.0)")
+
+if [ "${timebudget: -1}" == s ]; then
+    timebudget="${timebudget%?}"
+else
+    timemult=$(echo "$multipliers" | grep $problemtype | cut -d' ' -f2)
+    timebudget=$(python -c "print($timemult*$timebudget/1000.0)")
+fi
 
 echo "problemtype: $problemtype"
 echo "input: $input"

@@ -142,7 +142,10 @@ splp-KoerkelGhosh-sym/gs750a-4
 preset1cpu2gb="--partition=slims --cpus-per-task=1 --mem-per-cpu=2G"
 preset2cpu4gb="--partition=slims --cpus-per-task=2 --mem-per-cpu=4400M"
 preset2cpu1gb="--partition=slims --cpus-per-task=2 --mem-per-cpu=1G"
+
 preset4cpu8gb="--partition=slims --cpus-per-task=4 --mem-per-cpu=2G"
+preset4cpu3gb="--partition=slims --cpus-per-task=4 --mem-per-cpu=768M"
+
 preset4cpu16gb="--partition=general --cpus-per-task=4 --mem-per-cpu=4G"
 preset8cpu36gb="--partition=general --cpus-per-task=8 --mem-per-cpu=4G"
 

@@ -1,0 +1,2 @@
+--partition=slims --cpus-per-task=1 --mem-per-cpu=2G
+./solve_problem_set.sh cmcs3-250 "--partition=slims --cpus-per-task=1 --mem-per-cpu=2G" "problems_kmedian_original" bash -e ./solve_karapetyan.sh 250s

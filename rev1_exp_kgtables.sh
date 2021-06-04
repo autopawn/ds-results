@@ -6,25 +6,23 @@ source ./variables.sh
 # pref="echo"
 pref=
 
-$preset4cpumem="--partition=slims --cpus-per-task=4 --mem-per-cpu=130M"
-
-# NOTE: may need to use "$preset4cpumem" instead of "$preset4cpumem" for LEFTRARU warnings regarding inneficient usage of reosurces.
+preset3cpumem="--partition=slims --cpus-per-task=3 --mem-per-cpu=2GB"
 
 targets="problems_kg_original problems_kmedian_original"
 
 for target in $targets; do
 
     # DS standard algorithm
-    bash ./solve_problem_set.sh "ds-100_200" "$preset4cpumem" "$target" \
+    bash ./solve_problem_set.sh "ds-100_200" "$preset3cpumem" "$target" \
         $pref ./dc2/bin/dc -V -W -M -t4 -B8 sdbs+:100:mgesum _best:200
 
-    bash ./solve_problem_set.sh "ds-200_400" "$preset4cpumem" "$target" \
+    bash ./solve_problem_set.sh "ds-200_400" "$preset3cpumem" "$target" \
         $pref ./dc2/bin/dc -V -W -M -t4 -B8 sdbs+:200:mgesum _best:400
 
-    bash ./solve_problem_set.sh "ds-300_600" "$preset4cpumem" "$target" \
+    bash ./solve_problem_set.sh "ds-300_600" "$preset3cpumem" "$target" \
         $pref ./dc2/bin/dc -V -W -M -t4 -B8 sdbs+:300:mgesum _best:600
 
-    bash ./solve_problem_set.sh "ds-400_800" "$preset4cpumem" "$target" \
+    bash ./solve_problem_set.sh "ds-400_800" "$preset3cpumem" "$target" \
         $pref ./dc2/bin/dc -V -W -M -t4 -B8 sdbs+:400:mgesum _best:800
 
 
@@ -53,5 +51,8 @@ for target in $targets; do
 
     bash ./solve_problem_set.sh "cmcs3-1000" "$preset1cpu2gb" "$target" \
         $pref "bash -e ./solve_karapetyan.sh" 1000s
+
+    bash ./solve_problem_set.sh "cmcs3-7200" "$preset1cpu2gb" "$target" \
+        $pref "bash -e ./solve_karapetyan.sh" 7200s
 
 done

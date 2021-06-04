@@ -1,0 +1,2 @@
+--partition=slims --cpus-per-task=1 --mem-per-cpu=2G
+./solve_problem_set.sh popstar-122_4800 "--partition=slims --cpus-per-task=1 --mem-per-cpu=2G" "problems_kmedian_original" bash -xe ./solve_popstar.sh -graspit 4800 -elite 122
